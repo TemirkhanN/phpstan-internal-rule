@@ -1,0 +1,39 @@
+{
+    "name": "temirkhan/phpstan-internal-rules",
+    "description": "PHPStan rules to prevent prohibited usage of classes marked as @internal",
+    "type": "library",
+    "homepage": "https://github.com/TemirkhanN/phpstan-internal-rules",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Temirkhan Nasukhov",
+            "email": "temirkhan@nasukhov.me",
+            "homepage": "https://temirkhan.nasukhov.me",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Temirkhan\\PhpstanInternalRule\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Temirkhan\\PhpstanInternalRule\\": "test"
+        },
+        "classmap": ["test/data/"]
+    },
+    "require": {
+        "php": "~7.4.0",
+        "phpstan/phpstan": "^0.12.99"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    }
+}

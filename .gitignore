@@ -1,0 +1,18 @@
+.idea
+composer.lock
+/vendor/
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
+
+###> squizlabs/php_codesniffer ###
+/.phpcs-cache
+/phpcs.xml
+###< squizlabs/php_codesniffer ###
+
+###> phpstan ###
+.phpstan
+###< phpstan ###
+
