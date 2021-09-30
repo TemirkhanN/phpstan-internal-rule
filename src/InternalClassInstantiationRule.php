@@ -41,7 +41,7 @@ class InternalClassInstantiationRule implements Rule
             return [];
         }
 
-        if (!$this->arePartOfTheSamePackage($scope->getNamespace(), $additionalInfo->getNamespaceName())) {
+        if (!NamespaceChecker::arePartOfTheSamePackage($scope->getNamespace(), $additionalInfo->getNamespaceName())) {
             return [
                 sprintf('Instantiation of internal class %s.', $classInfo->getName())
             ];
@@ -62,27 +62,5 @@ class InternalClassInstantiationRule implements Rule
         }
 
         return $this->reflectionProvider->getClass($className);
-    }
-
-    private function arePartOfTheSamePackage(string $someNamespace, string $anotherNamespace): bool
-    {
-        if ($someNamespace === $anotherNamespace) {
-            return true;
-        }
-
-        $someNamespaceParts    = explode('\\', $someNamespace);
-        $anotherNamespaceParts = explode('\\', $anotherNamespace);
-
-        foreach ($someNamespaceParts as $key => $part) {
-            if (!isset($anotherNamespaceParts[$key])) {
-                break;
-            }
-
-            if ($anotherNamespaceParts[$key] !== $part) {
-                return false;
-            }
-        }
-
-        return true;
     }
 }
