@@ -23,23 +23,43 @@ class InternalClassInPropertyDeclarationRuleTest extends RuleTestCase
             [
                 [
                     'Internal class Some\Package\SomeInternalClass is used in type declaration.',
-                    46
+                    83
                 ],
                 [
                     'Internal class Some\Package\SomeInternalClass is used in type declaration.',
-                    49
+                    86
                 ],
                 [
                     'Internal class Some\Package\SomeInternalClass is used in type declaration.',
-                    55
+                    92
                 ],
                 [
                     'Internal class Some\Package\SomeInternalClass is used in type declaration.',
-                    65
+                    102
                 ],
                 [
                     'Internal class Some\Package\SomeInternalClass is used in type declaration.',
-                    75
+                    112
+                ],
+                [
+                    'Internal class Some\Package\SomeInternalClass is used in type declaration.',
+                    135
+                ],
+                [
+                    'Internal class Some\Package\SomeInternalClass is used in type declaration.',
+                    138
+                ],
+                [
+                    'Internal class Some\Package\SomeInternalClass is used in type declaration.',
+                    144
+                ],
+                [
+                    'Internal class Some\Package\SomeInternalClass is used in type declaration.',
+                    154
+                ],
+                [
+                    'Internal class Some\Package\SomeInternalClass is used in type declaration.',
+                    164
                 ],
             ],
         );
