@@ -2,6 +2,16 @@
 
 declare(strict_types=1);
 
+namespace {
+    /**
+     * @internal
+     */
+    class SomeRootClass
+    {
+
+    }
+}
+
 namespace Some\Package {
     /**
      * @internal
@@ -15,6 +25,7 @@ namespace Some\Package {
 // Valid usage. In the same package
 namespace Some\Package {
     $class = new SomeClass();
+    $anotherClass = new \SomeRootClass();
 }
 
 // Valid usage. In subpackage
@@ -31,6 +42,7 @@ namespace Some {
     use Some\Package\SomeClass;
 
     $class = new SomeClass();
+    $anotherClass = new \SomeRootClass();
 }
 
 // Prohibited usage. From another package of the same vendor.
@@ -55,4 +67,5 @@ namespace {
     use Some\Package\SomeClass;
 
     $class = new SomeClass();
+    $anotherClass = new \SomeRootClass();
 }
