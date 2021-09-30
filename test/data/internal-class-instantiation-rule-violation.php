@@ -48,3 +48,11 @@ namespace Another\Package {
 
     $class = new SomeClass();
 }
+
+// Prohibited usage. From global namespace(be it information expert or not)
+namespace {
+
+    use Some\Package\SomeClass;
+
+    $class = new SomeClass();
+}

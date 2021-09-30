@@ -29,6 +29,10 @@ class InternalClassInstantiationRuleTest extends RuleTestCase
                     'Instantiation of internal class Some\Package\SomeClass.',
                     49,
                 ],
+                [
+                    'Instantiation of internal class Some\Package\SomeClass.',
+                    57,
+                ],
             ],
         );
     }
