@@ -1,0 +1,3 @@
+rules:
+  - Temirkhan\PhpstanInternalRule\InternalClassInstantiationRule
+  - Temirkhan\PhpstanInternalRule\InternalClassInPropertyDeclarationRule
