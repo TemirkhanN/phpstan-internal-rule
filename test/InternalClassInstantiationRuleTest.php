@@ -18,16 +18,16 @@ class InternalClassInstantiationRuleTest extends RuleTestCase
     {
         $this->analyse(
             [
-                __DIR__.'/data/internal-class-instatiation-rule-violation.php'
+                __DIR__.'/data/internal-class-instantiation-rule-violation.php'
             ],
             [
                 [
                     'Instantiation of internal class Some\Package\SomeClass.',
-                    42
+                    41
                 ],
                 [
                     'Instantiation of internal class Some\Package\SomeClass.',
-                    50,
+                    49,
                 ],
             ],
         );

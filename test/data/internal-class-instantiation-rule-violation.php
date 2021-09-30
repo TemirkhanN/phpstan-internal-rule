@@ -31,7 +31,6 @@ namespace Some {
     use Some\Package\SomeClass;
 
     $class = new SomeClass();
-
 }
 
 // Prohibited usage. From another package of the same vendor.
