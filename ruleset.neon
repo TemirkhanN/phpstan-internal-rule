@@ -3,3 +3,4 @@ rules:
   - Temirkhan\PhpstanInternalRule\InternalClassInPropertyDeclarationRule
   - Temirkhan\PhpstanInternalRule\InternalTraitInAnotherTraitUsageRule
   - Temirkhan\PhpstanInternalRule\InternalTraitUsageRule
+  - Temirkhan\PhpstanInternalRule\InternalFunctionCallRule

@@ -27,4 +27,13 @@ class NamespaceChecker
 
         return true;
     }
+
+    public static function getNamespace(string $fullyQualifiedName): string
+    {
+        $parts = explode('\\', $fullyQualifiedName);
+
+        array_pop($parts);
+
+        return implode('\\', $parts);
+    }
 }

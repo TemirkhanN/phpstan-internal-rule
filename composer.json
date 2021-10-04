@@ -20,8 +20,7 @@
     "autoload-dev": {
         "psr-4": {
             "Temirkhan\\PhpstanInternalRule\\": "test"
-        },
-        "classmap": ["test/data/"]
+        }
     },
     "require": {
         "php": "~7.4.0",
