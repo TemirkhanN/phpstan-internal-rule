@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Some\Package {
+namespace Some\PackageC {
     /**
      * @internal
      */
@@ -36,12 +36,13 @@ namespace Another\DifferentPackage {
 
     }
 }
-namespace Another\Package {
+
+namespace Another\PackageC {
 
     use Another\DifferentPackage\OneInternalTrait;
     use Another\DifferentPackage\OnePublicTrait;
-    use Some\Package\InternalTrait;
-    use Some\Package\PublicTrait;
+    use Some\PackageC\InternalTrait;
+    use Some\PackageC\PublicTrait;
 
     /**
      * @internal
@@ -79,5 +80,15 @@ namespace Another\Package {
     class YetAnotherClass
     {
         use TrickyTrait;
+    }
+}
+
+namespace {
+
+    use Another\DifferentPackage\OneInternalTrait;
+
+    class OneMoreClass
+    {
+        use OneInternalTrait;
     }
 }

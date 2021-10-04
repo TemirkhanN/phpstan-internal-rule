@@ -18,16 +18,16 @@ class InternalTraitInAnotherTraitUsageRuleTest extends RuleTestCase
     {
         $this->analyse(
             [
-                __DIR__.'/data/internal-trait-usage-rule-violation.php'
+                __DIR__ . '/data/internal-trait-usage-rule-violation.php',
             ],
             [
                 [
-                    'Internal trait Some\Package\InternalTrait is used in Another\Package\DeepTrait',
-                    54
+                    'Internal trait Some\PackageC\InternalTrait is used in Another\PackageC\DeepTrait',
+                    55,
                 ],
                 [
-                    'Internal trait Another\DifferentPackage\OneInternalTrait is used in Another\Package\TrickyTrait',
-                    59
+                    'Internal trait Another\DifferentPackage\OneInternalTrait is used in Another\PackageC\TrickyTrait',
+                    60,
                 ],
             ],
         );

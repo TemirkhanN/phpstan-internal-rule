@@ -1,3 +1,5 @@
 rules:
   - Temirkhan\PhpstanInternalRule\InternalClassInstantiationRule
   - Temirkhan\PhpstanInternalRule\InternalClassInPropertyDeclarationRule
+  - Temirkhan\PhpstanInternalRule\InternalTraitInAnotherTraitUsageRule
+  - Temirkhan\PhpstanInternalRule\InternalTraitUsageRule
