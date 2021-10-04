@@ -41,8 +41,7 @@ class InternalClassInstantiationRule implements Rule
             return [];
         }
 
-        $callerNamespace = $scope->getNamespace() ?? '';
-        if (!NamespaceChecker::arePartOfTheSamePackage($callerNamespace, $additionalInfo->getNamespaceName())) {
+        if (!NamespaceChecker::arePartOfTheSamePackage($scope->getNamespace(), $additionalInfo->getNamespaceName())) {
             return [
                 sprintf('Instantiation of internal class %s.', $classInfo->getName())
             ];

@@ -44,8 +44,7 @@ class InternalFunctionCallRule implements Rule
             return [];
         }
 
-        $callerNamespace = $scope->getNamespace() ?? '';
-        if (NamespaceChecker::arePartOfTheSamePackage($functionNamespace, $callerNamespace)) {
+        if (NamespaceChecker::arePartOfTheSamePackage($functionNamespace, $scope->getNamespace())) {
             return [];
         }
 

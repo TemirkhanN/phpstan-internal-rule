@@ -6,8 +6,11 @@ namespace Temirkhan\PhpstanInternalRule;
 
 class NamespaceChecker
 {
-    public static function arePartOfTheSamePackage(string $someNamespace, string $anotherNamespace): bool
+    public static function arePartOfTheSamePackage(?string $someNamespace, ?string $anotherNamespace): bool
     {
+        $someNamespace    = $someNamespace ?? '';
+        $anotherNamespace = $anotherNamespace ?? '';
+
         if ($someNamespace === $anotherNamespace) {
             return true;
         }
