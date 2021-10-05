@@ -38,12 +38,6 @@ class InternalFunctionCallRule implements Rule
         }
 
         $functionNamespace = NamespaceChecker::getNamespace($function->getName());
-
-        // Internal function in root namespace is meaningless
-        if ($functionNamespace === '') {
-            return [];
-        }
-
         if (NamespaceChecker::arePartOfTheSamePackage($functionNamespace, $scope->getNamespace())) {
             return [];
         }

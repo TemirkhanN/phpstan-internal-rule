@@ -36,8 +36,7 @@ class InternalClassInstantiationRule implements Rule
 
         $additionalInfo = $classInfo->getNativeReflection();
 
-        // Internal classes in top level namespace are meaningless and should be ignored
-        if (!$additionalInfo->inNamespace() || !$classInfo->isInternal()) {
+        if (!$classInfo->isInternal()) {
             return [];
         }
 

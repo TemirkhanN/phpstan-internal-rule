@@ -15,6 +15,14 @@ class NamespaceChecker
             return true;
         }
 
+        if (
+            ($someNamespace === '' && $anotherNamespace !== '')
+            ||
+            ($anotherNamespace === '' && $someNamespace !== '')
+        ) {
+            return false;
+        }
+
         $someNamespaceParts    = explode('\\', $someNamespace);
         $anotherNamespaceParts = explode('\\', $anotherNamespace);
 

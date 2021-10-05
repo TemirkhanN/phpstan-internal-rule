@@ -22,9 +22,10 @@ namespace Some\Package {
     }
 }
 
-// Valid usage. In the same package
 namespace Some\Package {
+    // Valid usage. In the same package
     $class = new SomeClass();
+    // Invalid usage.
     $anotherClass = new \SomeRootClass();
 }
 
@@ -36,16 +37,17 @@ namespace Some\Package\Sub {
     $class = new SomeClass();
 }
 
-// Valid usage. Edgy case when an it is application itself. Like `namespace App;`
 namespace Some {
 
     use Some\Package\SomeClass;
 
+    // Valid usage. Edgy case when an it is application itself. Like `namespace App;`
     $class = new SomeClass();
+    // Invalid usage.
     $anotherClass = new \SomeRootClass();
 }
 
-// Prohibited usage. From another package of the same vendor.
+// Invalid usage. From another package of the same vendor.
 namespace Some\AnotherPackage {
 
     use Some\Package\SomeClass;
@@ -53,7 +55,7 @@ namespace Some\AnotherPackage {
     $class = new SomeClass();
 }
 
-// Prohibited usage. From different package.
+// Invalid usage. From different package.
 namespace Another\Package {
 
     use Some\Package\SomeClass;
@@ -61,11 +63,14 @@ namespace Another\Package {
     $class = new SomeClass();
 }
 
-// Prohibited usage. From global namespace(be it information expert or not)
+// Phpstan\Analyser is broken and absorbs previous namespace in Scope
+// Not working correctly until that behavior is fixed.
 namespace {
 
-    use Some\Package\SomeClass;
+    //use Some\Package\SomeClass;
 
-    $class = new SomeClass();
-    $anotherClass = new \SomeRootClass();
+    // Invalid usage. From global namespace(be it information expert or not)
+    //  $class = new SomeClass();
+    // Valid usage. From same root namespace.
+    // $anotherClass = new \SomeRootClass();
 }

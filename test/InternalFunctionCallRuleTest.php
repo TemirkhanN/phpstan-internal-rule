@@ -26,8 +26,20 @@ class InternalFunctionCallRuleTest extends RuleTestCase
                     28,
                 ],
                 [
+                    'Call of internal function internalFunction',
+                    46,
+                ],
+                [
+                    'Call of internal function internalFunction',
+                    62,
+                ],
+                [
                     'Call of internal function Some\PackageD\someInternalFunction',
                     71,
+                ],
+                [
+                    'Call of internal function internalFunction',
+                    77,
                 ],
             ],
         );

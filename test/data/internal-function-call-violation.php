@@ -9,7 +9,7 @@ namespace {
     /**
      * @internal
      */
-    function meaninglessInternalTaggedFunction(): void
+    function internalFunction(): void
     {
 
     }
@@ -23,7 +23,7 @@ namespace {
 
     $ofCourseIAmInternal();
 
-    meaninglessInternalTaggedFunction();
+    internalFunction();
 
     someInternalFunction();
 }
@@ -39,11 +39,11 @@ namespace Some\PackageD {
 
     function somePublicFunction(): void
     {
-        // valid. Inside same package
+        // Valid. Inside same package
         \Some\PackageD\someInternalFunction();
 
-        // valid. Edge-case
-        meaninglessInternalTaggedFunction();
+        // Invalid. From root
+        internalFunction();
     }
 }
 
@@ -58,8 +58,8 @@ namespace Some\PackageD\Subpackage {
     // valid. Public function
     somePublicFunction();
 
-    // valid. Edge-case
-    meaninglessInternalTaggedFunction();
+    // Invalid. From root
+    internalFunction();
 }
 
 namespace Another\PackageD {
@@ -74,5 +74,5 @@ namespace Another\PackageD {
     somePublicFunction();
 
     // valid. Edge-case
-    meaninglessInternalTaggedFunction();
+    internalFunction();
 }

@@ -4,3 +4,4 @@ rules:
   - Temirkhan\PhpstanInternalRule\InternalTraitInAnotherTraitUsageRule
   - Temirkhan\PhpstanInternalRule\InternalTraitUsageRule
   - Temirkhan\PhpstanInternalRule\InternalFunctionCallRule
+  - Temirkhan\PhpstanInternalRule\InternalMethodCallRule
