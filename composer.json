@@ -22,11 +22,9 @@
             "Temirkhan\\PhpstanInternalRule\\": "test"
         }
     },
-    "require": {
-        "php": "~7.4.0",
-        "phpstan/phpstan": "^0.12.99"
-    },
     "require-dev": {
+        "php": "~7.4.0|^8.0",
+        "phpstan/phpstan": "^0.12.99",
         "phpunit/phpunit": "^9.5"
     },
     "config": {
